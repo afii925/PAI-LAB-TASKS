@@ -2,7 +2,6 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# Simple Chatbot Logic
 def get_response(user_input):
     user_input = user_input.lower()
     if "hello" in user_input or "hi" in user_input:
