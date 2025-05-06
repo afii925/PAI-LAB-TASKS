@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Recipe Results 🍽️</h1>
+    <a href="/">Back</a>
+    
+    {% for recipe in recipes %}
+    <div class="recipe-card">
+        <h2>{{ recipe.strMeal }}</h2>
+        <img src="{{ recipe.strMealThumb }}" alt="{{ recipe.strMeal }}" width="200">
+        <p><strong>Category:</strong> {{ recipe.strCategory }}</p>
+        <p><strong>Instructions:</strong> {{ recipe.strInstructions[:200] }}...</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
